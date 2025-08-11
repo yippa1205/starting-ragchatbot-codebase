@@ -47,7 +47,7 @@ chmod +x run.sh
 
 ```bash
 cd backend
-uv run uvicorn app:app --reload --port 8000
+uv run uvicorn app:app --reload --port 8001
 ```
 
 The application will be available at:
