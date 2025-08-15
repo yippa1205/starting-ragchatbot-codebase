@@ -107,9 +107,17 @@ class VectorStore:
                 n_results=1
             )
             
-            if results['documents'][0] and results['metadatas'][0]:
-                # Return the title (which is now the ID)
-                return results['metadatas'][0][0]['title']
+            if (results['documents'][0] and results['metadatas'][0] and 
+                results['distances'] and len(results['distances'][0]) > 0):
+                
+                # Check if the match is good enough (lower distance = better match)
+                # For course title matching, we want a fairly strict threshold
+                distance = results['distances'][0][0]
+                similarity_threshold = 0.7  # Adjust this threshold as needed
+                
+                if distance <= similarity_threshold:
+                    return results['metadatas'][0][0]['title']
+                    
         except Exception as e:
             print(f"Error resolving course name: {e}")
         
