@@ -46,18 +46,18 @@ body {
     padding: 0;
 }
 
-/* Header - Hidden */
+/* Header - Visible */
 header {
-    display: none;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    background: var(--background);
+    border-bottom: 1px solid var(--border-color);
 }
 
 header h1 {
     font-size: 1.75rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #2563eb;
     margin: 0;
 }
 
